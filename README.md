@@ -17,20 +17,18 @@ npm install middle-match --save
 
 ## Usage
 
-```var middle = require('middle-match');
-
+```javascript
+var middle = require('middle-match');
 
 var buyer = {
 	min: 5000,
 	max: 13000
 };
 
-
 var seller = {
 	min: 8000,
 	max: 15000
 }
-
 
 console.log(middle.match(buyer,seller))
 ```
