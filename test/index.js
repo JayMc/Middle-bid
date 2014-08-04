@@ -1,8 +1,21 @@
 var should = require('chai').should(),
-	middle = require('../index.js'),
-	bid = middle.bid;
+	middle = require('../index.js');
 
-describe('#bid', function(){
+describe('#match', function(){
+
+	it('readme example', function(){
+		var buyer = {
+			min: 5000,
+			max: 13000
+		};
+
+		var seller = {
+			min: 8000,
+			max: 15000
+		};
+
+		middle.match(buyer,seller).should.equal(10500);		
+	});	
 	
 	it('buyer max and seller min are the same, should return 5', function(){
 		var buyer = {
@@ -13,9 +26,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 5,
 			max: 10
-		}
+		};
 
-		bid(buyer,seller).should.equal(5);		
+		middle.match(buyer,seller).should.equal(5);		
 	});
 
 	it('normal buy/sell ranges, should return 4', function(){
@@ -27,9 +40,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 3,
 			max: 10
-		}
+		};
 
-		bid(buyer,seller).should.equal(4);		
+		middle.match(buyer,seller).should.equal(4);		
 	});
 
 	it('normal buy/sell ranges large, should return 75', function(){
@@ -41,9 +54,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 50,
 			max: 100
-		}
+		};
 
-		bid(buyer,seller).should.equal(75);		
+		middle.match(buyer,seller).should.equal(75);		
 	});
 
 	it('normal buy/sell ranges decimal, should return 28.625', function(){
@@ -55,9 +68,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 15,
 			max: 100
-		}
+		};
 
-		bid(buyer,seller).should.equal(28.625);		
+		middle.match(buyer,seller,true).should.equal(29);		
 	});
 
 	it('buyer.max and seller.min are the same 6, should return 6', function(){
@@ -69,9 +82,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 6,
 			max: 10
-		}
+		};
 
-		bid(buyer,seller).should.equal(6);		
+		middle.match(buyer,seller).should.equal(6);		
 	});
 
 	it('seller range inside buyer range should return 4', function(){
@@ -83,9 +96,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 2,
 			max: 5
-		}
+		};
 
-		bid(buyer,seller).should.equal(4);		
+		middle.match(buyer,seller).should.equal(4);		
 	});
 
 	it('buyer range inside seller range should return 4', function(){
@@ -97,9 +110,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 1,
 			max: 6
-		}
+		};
 
-		bid(buyer,seller).should.equal(3);		
+		middle.match(buyer,seller).should.equal(3);		
 	});
 
 	it('buyer and seller not within range', function(){
@@ -111,9 +124,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 20,
 			max: 30
-		}
+		};
 
-		should.not.exist(bid(buyer, seller));
+		should.not.exist(middle.match(buyer, seller));
 	});
 
 	it('missing paramaters', function(){
@@ -125,9 +138,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 20,
 			max: 30
-		}
+		};
 
-		should.not.exist(bid(seller));		
+		should.not.exist(middle.match(seller));		
 	})
 
 	it('missing paramaters', function(){
@@ -138,9 +151,9 @@ describe('#bid', function(){
 		var seller = {
 			min: 20,
 			max: 30
-		}
+		};
 
-		should.not.exist(bid(buyer,seller));		
+		should.not.exist(middle.match(buyer,seller));		
 	})
 
 });
