@@ -1,6 +1,6 @@
 Middle-bid
 ==========
-Finds a price point overlapping between a min and max from both parties (buyer and seller).
+Finds a price point overlapping halfway between a min and max from both parties (buyer and seller).
 
 Example
 =======
@@ -13,5 +13,5 @@ the resulting price is: $10,500
 
 Testing
 =======
-With Mocah and Chai
+With Mocha and Chai
 run: npm test
