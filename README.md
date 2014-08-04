@@ -1,6 +1,6 @@
 Middle-match
 ==========
-Finds a price point overlapping halfway between a min and max from both parties (buyer and seller).
+A Node module which finds a price point overlapping halfway between a min and max for both parties (buyer and seller).
 
 ## Example
 
