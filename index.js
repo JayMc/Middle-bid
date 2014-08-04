@@ -6,7 +6,7 @@ module.exports = {
 	 * $param {seller} JSON object of seller with min and max attributes
 	 * @return {init} middle price overlapping
 	 */
-	bid: function(buyer, seller){
+	match: function(buyer, seller, round){
 
 		//return early for exceptions
 		if(buyer == undefined){
@@ -22,13 +22,14 @@ module.exports = {
 			return null
 		}
 
-		buyerRange = (buyer.max - buyer.min);
-		sellerRange = (seller.max - seller.min);
-		rangeMiddle = (buyerRange + sellerRange)/2;
 		if(buyer.max >= seller.min){
 			//within trading range
-			//find halfway point
+			//find halfway of what the seller wants to get and the least amount the buyer is to pay
 			middle = Number((buyer.max + seller.min)/2);
+
+			if(round){
+				middle = Math.round(middle);
+			}
 			return middle;
 
 		}else{
