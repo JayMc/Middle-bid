@@ -1,0 +1,28 @@
+{
+  "name": "Middle-bid",
+  "version": "0.1.0",
+  "description": "Finds a price point overlapping between a min and max the buyer and seller have discreetly proposed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w test --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JayMc/Middle-bid.git"
+  },
+  "keywords": [
+    "node",
+    "bid",
+    "buy",
+    "sell"
+  ],
+  "author": "Jason McIver <mciver.jason@gmail.com> (http://jasonmciver.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JayMc/Middle-bid/issues"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.21.3"
+  }
+}
