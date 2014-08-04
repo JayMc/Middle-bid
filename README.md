@@ -28,9 +28,14 @@ var buyer = {
 var seller = {
 	min: 8000,
 	max: 15000
-}
+};
 
-console.log(middle.match(buyer,seller))
+console.log(middle.match(buyer,seller));
+```
+
+Also try with rounding
+```javascript
+console.log(middle.match(buyer,seller,true));
 ```
 
 ## Testing
