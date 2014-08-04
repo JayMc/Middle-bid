@@ -17,7 +17,7 @@ npm install middle-match --save
 
 ## Usage
 
-var middle = require('middle-match');
+```var middle = require('middle-match');
 
 
 var buyer = {
@@ -33,6 +33,7 @@ var seller = {
 
 
 console.log(middle.match(buyer,seller))
+```
 
 ## Testing
 
