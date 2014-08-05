@@ -1,10 +1,10 @@
 module.exports = {
 
 	/**
-	 * [middle description]
+	 * Finds a middle point between buyer max price and seller min price
 	 * $param {buyer} JSON object of buyer with min and max attributes
 	 * $param {seller} JSON object of seller with min and max attributes
-	 * @return {init} middle price overlapping
+	 * @return {init} middle price overlapping or null if there was an error.
 	 */
 	match: function(buyer, seller, round){
 
