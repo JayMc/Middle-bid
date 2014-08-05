@@ -42,3 +42,9 @@ console.log(middle.match(buyer,seller,true));
 
 With Mocha and Chai
 run: npm test
+
+## TODO
+
+Add favour to the party which has the smallest range, acting as a penalty to the largest range.
+- Could be based on difference in ranges or difference between matched price and buyer.min or seller.max
+- Needs fairness testing
